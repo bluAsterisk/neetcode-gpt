@@ -35,6 +35,6 @@ class Solution:
             for j in range(len(weights)):
                 gradient = self.get_derivative(predictions, Y, len(X), X, j) # step 2
                 weights[j] -= self.learning_rate * gradient   # step 3
-            print(f"[epoch {epoch}] \n predictions: {predictions} \n gradient: {gradient} \n weights: {weights}")
+            # print(f"[epoch {epoch}] \n predictions: {predictions} \n gradient: {gradient} \n weights: {weights}")
         return np.round(weights, 5)
 

@@ -19,8 +19,6 @@ class Solution:
         y_hat: float = (1 / (1 + np.exp(-1 * z)))
         # Loss = L: float = 0.5 * (y_hat - y_true)**2
         # Gradient
-        dL_dw = (y_hat - y_true) * (y_hat * (1 - y_hat))
-        for i in range(len(x)):
-            x[i] *= np.round(dL_dw, 5)
-        dL_db = np.round(dL_dw, 5)
-        return (x, dL_db)
+        dL_db = np.round((y_hat - y_true) * (y_hat * (1 - y_hat)), 5)
+        dL_dw = np.round((dL_db * x), 5)
+        return (dL_dw, dL_db)
